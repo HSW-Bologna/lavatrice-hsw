@@ -4,11 +4,124 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="components" displayName="components" projectFiles="true">
+        <logicalFolder name="lvgl" displayName="lvgl" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <logicalFolder name="lv_core" displayName="lv_core" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_core/lv_debug.h</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_disp.h</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_group.h</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_indev.h</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_obj.h</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_refr.h</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_style.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_draw" displayName="lv_draw" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_draw/lv_draw.h</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_arc.h</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_basic.h</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_img.h</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_label.h</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_line.h</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_rect.h</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_triangle.h</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_img_cache.h</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_img_decoder.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_font" displayName="lv_font" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_font/lv_font.h</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_font_fmt_txt.h</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_symbol_def.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_hal" displayName="lv_hal" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_hal/lv_hal.h</itemPath>
+              <itemPath>components/lvgl/src/lv_hal/lv_hal_disp.h</itemPath>
+              <itemPath>components/lvgl/src/lv_hal/lv_hal_indev.h</itemPath>
+              <itemPath>components/lvgl/src/lv_hal/lv_hal_tick.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_misc" displayName="lv_misc" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_misc/lv_anim.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_area.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_async.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_bidi.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_circ.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_color.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_fs.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_gc.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_ll.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_log.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_math.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_mem.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_printf.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_task.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_templ.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_txt.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_types.h</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_utils.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_objx" displayName="lv_objx" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_objx/lv_arc.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_bar.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_btn.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_btnm.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_calendar.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_canvas.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_cb.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_chart.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_cont.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_cpicker.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_ddlist.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_gauge.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_img.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_imgbtn.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_kb.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_label.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_led.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_line.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_list.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_lmeter.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_mbox.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_objx_templ.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_page.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_preload.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_roller.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_slider.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_spinbox.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_sw.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_ta.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_table.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_tabview.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_tileview.h</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_win.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_themes" displayName="lv_themes" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_themes/lv_theme.h</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_alien.h</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_default.h</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_material.h</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_mono.h</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_nemo.h</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_night.h</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_templ.h</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_zen.h</itemPath>
+            </logicalFolder>
+            <itemPath>components/lvgl/src/lv_conf_checker.h</itemPath>
+            <itemPath>components/lvgl/src/lv_version.h</itemPath>
+          </logicalFolder>
+          <itemPath>components/lvgl/lvgl.h</itemPath>
+          <itemPath>components/lvgl/lv_conf_template.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <logicalFolder name="main" displayName="main" projectFiles="true">
+        <logicalFolder name="config" displayName="config" projectFiles="true">
+          <itemPath>main/config/lv_conf.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="peripherals" displayName="peripherals" projectFiles="true">
           <itemPath>main/peripherals/hardwareprofile.h</itemPath>
           <itemPath>main/peripherals/system.h</itemPath>
           <itemPath>main/peripherals/display.h</itemPath>
+          <itemPath>main/peripherals/timer.h</itemPath>
+          <itemPath>main/peripherals/spi_devices.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -19,10 +132,137 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="components" displayName="components" projectFiles="true">
+        <logicalFolder name="gel" displayName="gel" projectFiles="true">
+          <logicalFolder name="timer" displayName="timer" projectFiles="true">
+            <itemPath>components/generic_embedded_libs/gel/timer/stopwatch.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="lvgl" displayName="lvgl" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <logicalFolder name="lv_core" displayName="lv_core" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_core/lv_debug.c</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_disp.c</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_group.c</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_indev.c</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_obj.c</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_refr.c</itemPath>
+              <itemPath>components/lvgl/src/lv_core/lv_style.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_draw" displayName="lv_draw" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_draw/lv_draw.c</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_arc.c</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_basic.c</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_img.c</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_label.c</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_line.c</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_rect.c</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_draw_triangle.c</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_img_cache.c</itemPath>
+              <itemPath>components/lvgl/src/lv_draw/lv_img_decoder.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_font" displayName="lv_font" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_font/lv_font.c</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_font_fmt_txt.c</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_12.c</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_12_subpx.c</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_16.c</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_22.c</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_28.c</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_28_compressed.c</itemPath>
+              <itemPath>components/lvgl/src/lv_font/lv_font_unscii_8.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_hal" displayName="lv_hal" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_hal/lv_hal_disp.c</itemPath>
+              <itemPath>components/lvgl/src/lv_hal/lv_hal_indev.c</itemPath>
+              <itemPath>components/lvgl/src/lv_hal/lv_hal_tick.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_misc" displayName="lv_misc" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_misc/lv_anim.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_area.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_async.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_bidi.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_circ.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_color.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_fs.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_gc.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_ll.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_log.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_math.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_mem.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_printf.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_task.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_templ.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_txt.c</itemPath>
+              <itemPath>components/lvgl/src/lv_misc/lv_utils.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_objx" displayName="lv_objx" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_objx/lv_arc.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_bar.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_btn.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_btnm.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_calendar.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_canvas.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_cb.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_chart.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_cont.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_cpicker.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_ddlist.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_gauge.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_img.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_imgbtn.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_kb.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_label.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_led.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_line.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_list.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_lmeter.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_mbox.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_objx_templ.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_page.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_preload.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_roller.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_slider.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_spinbox.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_sw.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_ta.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_table.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_tabview.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_tileview.c</itemPath>
+              <itemPath>components/lvgl/src/lv_objx/lv_win.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="lv_themes" displayName="lv_themes" projectFiles="true">
+              <itemPath>components/lvgl/src/lv_themes/lv_theme.c</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_alien.c</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_default.c</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_material.c</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_mono.c</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_nemo.c</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_night.c</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_templ.c</itemPath>
+              <itemPath>components/lvgl/src/lv_themes/lv_theme_zen.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="SPI" displayName="SPI" projectFiles="true">
+          <logicalFolder name="spi_common" displayName="spi_common" projectFiles="true">
+            <itemPath>components/SPI/spi_common/spi_common.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="spi_devices" displayName="spi_devices" projectFiles="true">
+            <logicalFolder name="io" displayName="io" projectFiles="true">
+              <logicalFolder name="MCP23x17" displayName="MCP23x17" projectFiles="true">
+                <itemPath>components/SPI/spi_devices/io/MCP23x17/mcp23x17.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
       <logicalFolder name="main" displayName="main" projectFiles="true">
         <logicalFolder name="peripherals" displayName="peripherals" projectFiles="true">
           <itemPath>main/peripherals/display.c</itemPath>
           <itemPath>main/peripherals/system.c</itemPath>
+          <itemPath>main/peripherals/timer.c</itemPath>
+          <itemPath>main/peripherals/spi_devices.c</itemPath>
         </logicalFolder>
         <itemPath>main/main.c</itemPath>
       </logicalFolder>
@@ -35,6 +275,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>main</Elem>
+    <Elem>components</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -44,14 +285,16 @@
         <targetDevice>PIC24EP256GP206</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool></platformTool>
+        <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.36</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="dsPIC33E-GM-GP-MC-GU-MU_DFP" vendor="Microchip" version="1.3.85"/>
       </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -69,6 +312,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -77,8 +321,8 @@
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
       <C30>
-        <property key="code-model" value="default"/>
-        <property key="const-model" value="default"/>
+        <property key="code-model" value="large-code"/>
+        <property key="const-model" value="const-in-code"/>
         <property key="data-model" value="default"/>
         <property key="disable-instruction-scheduling" value="false"/>
         <property key="enable-all-warnings" value="true"/>
@@ -91,7 +335,8 @@
         <property key="enable-short-double" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
-        <property key="extra-include-directories" value="main/peripherals"/>
+        <property key="extra-include-directories"
+                  value="main/peripherals;components\lvgl;components;main\config;components\generic_embedded_libs;components\SPI"/>
         <property key="isolate-each-function" value="false"/>
         <property key="keep-inline" value="false"/>
         <property key="oXC16gcc-align-arr" value="false"/>
@@ -111,7 +356,7 @@
         <property key="optimization-level" value="0"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value="LV_CONF_INCLUDE_SIMPLE"/>
         <property key="scalar-model" value="default"/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
@@ -195,12 +440,76 @@
         <property key="legacy-libc" value="true"/>
         <property key="mpreserve-all" value="false"/>
         <property key="oXC16glb-macros" value=""/>
+        <property key="omit-pack-options" value="1"/>
         <property key="output-file-format" value="elf"/>
         <property key="preserve-all" value="false"/>
         <property key="preserve-file" value=""/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
       </C30Global>
+      <ICD3PlatformTool>
+        <property key="ADC 1" value="true"/>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="COMPARATOR" value="true"/>
+        <property key="CRC" value="true"/>
+        <property key="CTMU" value="true"/>
+        <property key="Freeze All Other Peripherals" value="true"/>
+        <property key="I2C1" value="true"/>
+        <property key="I2C2" value="true"/>
+        <property key="INPUT CAPTURE 1" value="true"/>
+        <property key="INPUT CAPTURE 2" value="true"/>
+        <property key="INPUT CAPTURE 3" value="true"/>
+        <property key="INPUT CAPTURE 4" value="true"/>
+        <property key="OUTPUT COMPARE 1" value="true"/>
+        <property key="OUTPUT COMPARE 2" value="true"/>
+        <property key="OUTPUT COMPARE 3" value="true"/>
+        <property key="OUTPUT COMPARE 4" value="true"/>
+        <property key="PTG" value="true"/>
+        <property key="SPI 1" value="true"/>
+        <property key="SPI 2" value="true"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="TIMER1" value="true"/>
+        <property key="TIMER2" value="true"/>
+        <property key="TIMER3" value="true"/>
+        <property key="TIMER4" value="true"/>
+        <property key="TIMER5" value="true"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="UART 1" value="true"/>
+        <property key="UART 2" value="true"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="hwtoolclock.frcindebug" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="false"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-2afeb"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges" value=""/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="programoptions.usehighvoltageonmclr" value="false"/>
+        <property key="programoptions.uselvpprogramming" value="false"/>
+        <property key="voltagevalue" value="3.25"/>
+      </ICD3PlatformTool>
     </conf>
   </confs>
 </configurationDescriptor>

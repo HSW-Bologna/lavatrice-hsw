@@ -18,11 +18,7 @@
 #ifndef HARDWAREPROFILE_H
 #define	HARDWAREPROFILE_H
 
-#include <libpic30.h>
-#include <pps.h>
-
 #include <xc.h>
-
 
 
 

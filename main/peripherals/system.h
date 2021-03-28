@@ -18,12 +18,14 @@
 #ifndef SYSTEM_H_INCLUDED
 #define SYSTEM_H_INCLUDED
 
-#include <xc.h>
 #define FOSC 120000000 //TODO: impostare questa macro piu' precisamente 120223125
 #define FCY (FOSC/2)
 #include <libpic30.h>
+#include <xc.h>
+
 
 void system_oscillator_config(void);
+void system_GPIO_init();
 
 #endif
 

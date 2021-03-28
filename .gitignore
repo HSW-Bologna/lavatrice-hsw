@@ -6,6 +6,7 @@
 *.obj
 *.o
 *.sdb
+.generated*
 *.obj.dmp
 html/
 nbproject/private/

@@ -70,3 +70,143 @@ void system_oscillator_config(void)
     while (OSCCONbits.LOCK != 1);
 }
 
+void system_GPIO_init() {
+    // All AD Converter OFF
+    ANSELA = 0x0000;
+    ANSELB = 0x0000;
+    ANSELC = 0x0000;
+    ANSELE = 0x0000;
+    
+    // init pin directions
+    
+    SPI_1_SCK_TRIS                  = OUTPUT_PIN;
+    SPI_1_SDO_TRIS                  = OUTPUT_PIN;
+    SPI_1_SDI_TRIS                  = INPUT_PIN;
+
+    CS_TOUCH_TRIS                   = OUTPUT_PIN;
+    CS_IO_EXP_16_1_2_TRIS           = OUTPUT_PIN;
+    
+    
+    
+    SPI_2_SCK_TRIS                  = OUTPUT_PIN;
+    SPI_2_SDO_TRIS                  = OUTPUT_PIN;
+    SPI_2_SDI_TRIS                  = INPUT_PIN;
+    
+    SPI_2_CS_PT100A_TRIS            = OUTPUT_PIN;
+    SPI_2_CS_PT100B_TRIS            = OUTPUT_PIN;
+    SPI_2_CS_AD_TRIS                = OUTPUT_PIN;
+    SPI_2_CS_DA_TRIS                = OUTPUT_PIN;
+    
+    
+    
+    SPI_3_SCK_TRIS                  = OUTPUT_PIN;
+    SPI_3_SDO_TRIS                  = OUTPUT_PIN;
+    SPI_3_SDI_TRIS                  = INPUT_PIN;
+    
+    CS_1_SLAVE_TRIS                 = OUTPUT_PIN;
+    CS_2_SLAVE_TRIS                 = OUTPUT_PIN;
+    CS_3_SLAVE_TRIS                 = OUTPUT_PIN;
+    CS_4_SLAVE_TRIS                 = OUTPUT_PIN;
+    
+    
+    
+    
+    TOUCH_BUSY_TRIS                 = INPUT_PIN;
+    
+    I2C_CLK_TRIS                    = OUTPUT_PIN;
+    I2C_DATA_TRIS                   = OUTPUT_PIN;
+    
+    I2C_WP_TRIS                     = OUTPUT_PIN;
+    
+    
+    
+//    DISP_LIGHT_TRIS                 = OUTPUT_PIN;
+    DISP_DATA0_TRIS                 = OUTPUT_PIN;
+    DISP_DATA1_TRIS                 = OUTPUT_PIN;
+    DISP_DATA2_TRIS                 = OUTPUT_PIN;
+    DISP_DATA3_TRIS                 = OUTPUT_PIN;
+    DISP_DATA4_TRIS                 = OUTPUT_PIN;
+    DISP_DATA5_TRIS                 = OUTPUT_PIN;
+    DISP_DATA6_TRIS                 = OUTPUT_PIN;
+    DISP_DATA7_TRIS                 = OUTPUT_PIN;
+    
+    DISP_CE_TRIS                    = OUTPUT_PIN;
+    DISP_RESET_TRIS                 = OUTPUT_PIN;
+    DISP_WRITE_TRIS                 = OUTPUT_PIN;
+    DISP_READ_TRIS                  = OUTPUT_PIN;
+    DISP_CD_TRIS                    = OUTPUT_PIN;
+    
+    INT0_PIN_TRIS                   = INPUT_PIN;
+//    EXT_RESET_TRIS                  = OUTPUT_PIN; //INPUT_PIN;
+    
+    IN_11_TRIS                      = INPUT_PIN;
+//    IN_02_TRIS                      = INPUT_PIN;
+//    IN_03_TRIS                      = INPUT_PIN;
+//    IN_04_TRIS                      = INPUT_PIN;
+    IN_07_TRIS                      = INPUT_PIN;
+    IN_06_TRIS                      = INPUT_PIN;
+//    IN_07_TRIS                      = INPUT_PIN;
+//    IN_08_TRIS                      = INPUT_PIN;
+//    IN_09_TRIS                      = INPUT_PIN;
+//    IN_10_TRIS                      = INPUT_PIN;
+//    IN_11_TRIS                      = INPUT_PIN;
+    
+    
+    
+//    BUZZER_TRIS                     = OUTPUT_PIN;
+    LED_RUN_TRIS                    = OUTPUT_PIN;
+    
+    
+    
+    OUT_01_TRIS                     = OUTPUT_PIN;
+//    OUT_02_TRIS                     = OUTPUT_PIN;
+//    OUT_03_TRIS                     = OUTPUT_PIN;
+//    OUT_04_TRIS                     = OUTPUT_PIN;
+//    OUT_05_TRIS                     = OUTPUT_PIN;
+    OUT_06_TRIS                     = OUTPUT_PIN;
+//    OUT_07_TRIS                     = OUTPUT_PIN;
+//    OUT_08_TRIS                     = OUTPUT_PIN;
+//    OUT_09_TRIS                     = OUTPUT_PIN;
+//    OUT_10_TRIS                     = OUTPUT_PIN;
+//    OUT_11_TRIS                     = OUTPUT_PIN;
+    
+    OUT_12_TRIS                     = OUTPUT_PIN;   // PWM 1
+    OUT_13_TRIS                     = OUTPUT_PIN;   // PWM 2
+    
+    
+    
+    //reset outputs
+    SPI_2_CS_PT100A                       = 1;    // INV
+    SPI_2_CS_PT100B                       = 1;    // INV
+    CS_1_SLAVE                      = 0;    // INV
+    
+    CS_TOUCH                        = 1;
+//  CS_IO_EXP_16_1_2_TRIS           = 1;
+    SPI_1_SDO                       = 0;    // DIR TOUCH - INV ALTRI
+    SPI_1_SCK                       = 0;    // DIR TOUCH - INV ALTRI
+    
+    I2C_CLK                         = 1;
+I2C_DATA_OUT                    = 1;
+    I2C_WP                          = 1;
+    
+//    BUZZER                          = 0;
+    
+    
+    
+    DISP_DATA0                      = 0;
+    DISP_DATA1                      = 0;
+    DISP_DATA2                      = 0;
+    DISP_DATA3                      = 0;
+    DISP_DATA4                      = 0;
+    DISP_DATA5                      = 0;
+    DISP_DATA6                      = 0;
+    DISP_DATA7                      = 0;
+    
+    DISP_CE                         = 1;
+    DISP_RESET                      = 1;
+    DISP_WRITE                      = 1;
+    DISP_READ                       = 1;
+    DISP_CD                         = 0;
+    
+//    DISP_LIGHT                      = 0;
+}

@@ -22,13 +22,10 @@
 #include "system.h"
 #include "hardwareprofile.h"
 #include "display.h"
+#include "spi_devices.h"
 
 
-
-
-
-void display_write_byte(unsigned char data, unsigned char iscommand)
-{
+void display_write_byte(unsigned char data, unsigned char iscommand) {
     DISP_DATA_OUT = (DISP_DATA_OUT & ~DISP_DATA_MASK) | data;
     DISP_CD = iscommand;
     DISP_WRITE = 0;
@@ -48,8 +45,7 @@ void display_write_byte(unsigned char data, unsigned char iscommand)
     Nop();
 }
 
-unsigned char check_status()
-{
+unsigned char check_status() {
     DISP_DATA_TRIS = DISP_DATA_TRIS | DISP_DATA_MASK;
     Nop();
     DISP_CD = 1;
@@ -80,8 +76,7 @@ unsigned char check_status()
     return 0;
 }
 
-unsigned char send_2B_cmd(unsigned char D1, unsigned char D2, unsigned char cmd)
-{
+unsigned char send_2B_cmd(unsigned char D1, unsigned char D2, unsigned char cmd) {
     //TODO check order of data MSB LSB
     //TODO check timeout
 
@@ -94,8 +89,7 @@ unsigned char send_2B_cmd(unsigned char D1, unsigned char D2, unsigned char cmd)
     return 1;
 }
 
-unsigned char send_1B_cmd(unsigned char data, unsigned char cmd)
-{
+unsigned char send_1B_cmd(unsigned char data, unsigned char cmd) {
     //TODO check timeout
     while (!check_status());
     display_write_byte(data, 0);
@@ -104,16 +98,14 @@ unsigned char send_1B_cmd(unsigned char data, unsigned char cmd)
     return 1;
 }
 
-unsigned char send_nodata_cmd(unsigned char cmd)
-{
+unsigned char send_nodata_cmd(unsigned char cmd) {
     //TODO check timeout
     while (!check_status());
     display_write_byte(cmd, 1);
     return 1;
 }
 
-void set_address_pointer(unsigned int address)
-{
+void set_address_pointer(unsigned int address) {
     send_2B_cmd((unsigned char)(address & 0xFF),(unsigned char)(address >> 8),0x24);
 }
 
@@ -150,17 +142,13 @@ void vram_data_write(unsigned char data,unsigned char increment)
         send_1B_cmd(data,0xC4);
 }
 
-
-
-
-
-void init_display_driver()
-{
+void init_display_driver() {
     DISP_RESET = 0;
     __delay_ms(1);
     DISP_RESET = 1;
 //    DISP_LIGHT = 1;
-
+    
+    mcp23x17_set_gpio_level(exp_driver, MCP23X17_ADDR_1, GPIO_RETRO, 1);
     set_mode(OR_MODE);
     set_display_mode(TEXT_OFF_GRAPHIC_ON);
     set_graphic_home_address(0x00);

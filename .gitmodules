@@ -1,0 +1,6 @@
+[submodule "components/SPI"]
+	path = components/SPI
+	url = https://github.com/Maldus512/SPI.git
+[submodule "components/generic_embedded_libs"]
+	path = components/generic_embedded_libs
+	url = https://github.com/Maldus512/generic_embedded_libs.git
