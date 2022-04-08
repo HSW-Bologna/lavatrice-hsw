@@ -25,7 +25,7 @@ void spi_devices_init(void) {
         mcp23x17_set_gpio_direction(exp_driver, MCP23X17_ADDR_1, i, MCP23X17_OUTPUT_MODE);
         mcp23x17_set_gpio_direction(exp_driver, MCP23X17_ADDR_2, i, MCP23X17_OUTPUT_MODE);
     }
-    mcp23x17_set_gpio_register(exp_driver, MCP23X17_ADDR_1, 0x1000);
+    mcp23x17_set_gpio_register(exp_driver, MCP23X17_ADDR_1, 0x0000);
     mcp23x17_set_gpio_register(exp_driver, MCP23X17_ADDR_2, 0);
 }
 

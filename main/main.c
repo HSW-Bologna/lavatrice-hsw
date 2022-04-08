@@ -5,11 +5,12 @@
 #include "timer.h"
 #include "gel/timer/timecheck.h"
 #include "spi_devices.h"
+#include "peripherals/touch.h"
+
 
 #define GBUFSIZE (240*128/8)
 unsigned char gbuf[GBUFSIZE];
 
-static unsigned long ts=0;
 
 void my_flush_cb(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p) {
     // durata 0,39ms
@@ -57,19 +58,22 @@ void rounder(struct _disp_drv_t * disp_drv, lv_area_t *a)
     a->y2 = a->y2 > 127 ? 127 : a->y2;
 }
 
-//bool my_input_read(lv_indev_drv_t * drv, lv_indev_data_t*data)
-//{
-//    data->point.x = Touch_Coord[0]; 
-//    data->point.y = Touch_Coord[1];
-//    data->state = f_touch_detected ? LV_INDEV_STATE_PR : LV_INDEV_STATE_REL;
-//    return false; /*No buffering now so no more data read*/
-//}
+bool my_input_read(lv_indev_drv_t * drv, lv_indev_data_t*data)
+{
+    data->point.x = Touch_Coord[0]; 
+    data->point.y = Touch_Coord[1];
+    data->state = f_touch_detected ? LV_INDEV_STATE_PR : LV_INDEV_STATE_REL;
+    return false; /*No buffering now so no more data read*/
+}
 
 int main (void) {
-    int counter = 0, position = 0, blink=0;
+    unsigned long ts=0, touchts = 0;
+
+    int blink=0;
     system_oscillator_config();
     system_GPIO_init();
     init_display_driver();
+    touch_init();
     
     timer_init();
     lv_init();
@@ -89,6 +93,13 @@ int main (void) {
     lv_disp_t * disp;
     disp = lv_disp_drv_register(&disp_drv); /*Register the driver and save the created display objects*/ 
     
+    lv_indev_drv_t indev_drv;
+    lv_indev_drv_init(&indev_drv);      /*Basic initialization*/
+    indev_drv.type = LV_INDEV_TYPE_POINTER;                 /*See below.*/
+    indev_drv.read_cb = touch_read;              /*See below.*/
+    /*Register the driver in LittlevGL and save the created input device object*/
+    lv_indev_t * my_indev = lv_indev_drv_register(&indev_drv);
+    
         
     lv_obj_t * scr = lv_disp_get_scr_act(NULL);     /*Get the current screen*/
     lv_theme_t * th = lv_theme_mono_init(0, NULL);
@@ -96,10 +107,14 @@ int main (void) {
     lv_theme_set_current(th);
     
 
+    lv_obj_t *btn = lv_btn_create(scr, NULL);
+    
+    
     /*Create a Label on the currently active screen*/
-    lv_obj_t *label1 =  lv_label_create(scr, NULL);
+    lv_obj_t *label1 =  lv_label_create(btn, NULL);
     lv_label_set_text(label1, "testo");
-    lv_obj_set_pos(label1,0, 10);// position, position);
+    lv_obj_set_pos(btn,10, 10);// position, position);
+    lv_obj_set_size(btn, 200,60);
     
     while (1) {
         //flush_one_row();
@@ -111,6 +126,12 @@ int main (void) {
             LED_RUN=blink;
             blink=!blink;
             ts=get_millis();
+        }
+        
+        if (is_expired(touchts, get_millis(), 20)) {
+            touch_manage();
+            lv_label_set_text_fmt(label1, "touch %3i %3i", Touch_Coord[0], Touch_Coord[1]);
+            touchts = get_millis();
         }
     }
 }

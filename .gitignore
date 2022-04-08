@@ -1,3 +1,6 @@
+.sconsign.dblite
+simulated
+tmp
 
 *.d
 *.pre

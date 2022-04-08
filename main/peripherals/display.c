@@ -148,7 +148,7 @@ void init_display_driver() {
     DISP_RESET = 1;
 //    DISP_LIGHT = 1;
     
-    mcp23x17_set_gpio_level(exp_driver, MCP23X17_ADDR_1, GPIO_RETRO, 1);
+    //mcp23x17_set_gpio_level(exp_driver, MCP23X17_ADDR_1, GPIO_RETRO, 1);
     set_mode(OR_MODE);
     set_display_mode(TEXT_OFF_GRAPHIC_ON);
     set_graphic_home_address(0x00);
