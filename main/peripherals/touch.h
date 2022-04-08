@@ -117,7 +117,7 @@ void touch_init(void);
 //void Touch__UpdateCoordinates(void);
 void Touch__Calibration(TOUCH_CALIBRATION_ANGLE_TYPE step);
 void touch_manage(void);
-bool touch_read(lv_indev_t *indev_drv, lv_indev_data_t *data);
+void touch_read(struct _lv_indev_drv_t * indev_drv, lv_indev_data_t *data);
 void startCalibration(void);
 
 void Touch_Key_Get (void);

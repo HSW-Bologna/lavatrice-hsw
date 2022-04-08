@@ -9,7 +9,7 @@
 
 
 #define GBUFSIZE (240*128/8)
-unsigned char gbuf[GBUFSIZE];
+lv_color_t gbuf[GBUFSIZE];
 
 
 void my_flush_cb(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p) {
@@ -41,7 +41,7 @@ void my_flush_cb(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * 
 }
 
 
- void lv_vdb_wr_1bpp_horiz(struct _disp_drv_t * disp_drv, uint8_t * buf, lv_coord_t buf_w, lv_coord_t x, lv_coord_t y, lv_color_t color, lv_opa_t opa)
+ void lv_vdb_wr_1bpp_horiz(struct _lv_disp_drv_t * disp_drv, uint8_t * buf, lv_coord_t buf_w, lv_coord_t x, lv_coord_t y, lv_color_t color, lv_opa_t opa)
 {
     buf += buf_w/8 * y;
     buf += x/8;
@@ -50,7 +50,7 @@ void my_flush_cb(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * 
 }
 
 
-void rounder(struct _disp_drv_t * disp_drv, lv_area_t *a)
+void rounder(struct _lv_disp_drv_t * disp_drv, lv_area_t *a)
 {
     a->x1 = a->x1 & ~(0x7);
     a->x2 = a->x2 |  (0x7);
@@ -79,6 +79,34 @@ int main (void) {
     lv_init();
     spi_devices_init();
     
+    /*A static or global variable to store the buffers*/
+    static lv_disp_draw_buf_t disp_buf;
+
+    /*Initialize `disp_buf` with the buffer(s). With only one buffer use NULL instead buf_2 */
+    lv_disp_draw_buf_init(&disp_buf, gbuf, NULL, GBUFSIZE);
+    
+    static lv_disp_drv_t disp_drv;                     /*A variable to hold the drivers. Must be static or global.*/
+    lv_disp_drv_init(&disp_drv);                       /*Basic initialization*/
+    disp_drv.draw_buf = &disp_buf;                     /*Set an initialized buffer*/
+    disp_drv.flush_cb = my_flush_cb;                      /*Set a flush callback to draw to the display*/
+    disp_drv.set_px_cb = lv_vdb_wr_1bpp_horiz;
+    disp_drv.rounder_cb = rounder;
+    disp_drv.hor_res  = 240; /*Set the horizontal resolution in pixels*/
+    disp_drv.ver_res  = 128;   /*Set the vertical resolution in pixels*/
+
+    lv_disp_t *disp = lv_disp_drv_register(&disp_drv); /*Register the driver and save the created display objects*/
+    lv_theme_t *th = lv_theme_mono_init(disp, 0, &lv_font_unscii_8);
+    lv_disp_set_theme(disp, th);
+    
+    
+    static lv_indev_drv_t indev_drv;
+    lv_indev_drv_init(&indev_drv); /*Basic initialization*/
+    indev_drv.type    = LV_INDEV_TYPE_POINTER;
+    indev_drv.read_cb = touch_read;
+    /*Register the driver in LVGL and save the created input device object*/
+    lv_indev_t *indev = lv_indev_drv_register(&indev_drv);
+   
+#if 0
     static lv_disp_buf_t disp_buf;
      
     lv_disp_buf_init(&disp_buf, gbuf, NULL, 8*240);
@@ -105,13 +133,15 @@ int main (void) {
     lv_theme_t * th = lv_theme_mono_init(0, NULL);
     /*Set the surent system theme*/
     lv_theme_set_current(th);
+#endif
+
     
 
-    lv_obj_t *btn = lv_btn_create(scr, NULL);
+    lv_obj_t *btn = lv_btn_create(lv_scr_act());
     
     
     /*Create a Label on the currently active screen*/
-    lv_obj_t *label1 =  lv_label_create(btn, NULL);
+    lv_obj_t *label1 =  lv_label_create(btn);
     lv_label_set_text(label1, "testo");
     lv_obj_set_pos(btn,10, 10);// position, position);
     lv_obj_set_size(btn, 200,60);

@@ -12,10 +12,10 @@
 #include "spi_common/spi_common.h"
 #include <stdint.h>
 
-spi_driver_t  exp_driver = SPI_DRIVER(spi1_exchange, spi1_cs_control, NULL);
+spi_driver_t  exp_driver; 
 
 void spi_devices_init(void) {
-    
+    exp_driver = SPI_DRIVER(spi1_exchange, spi1_cs_control, NULL);
     size_t i=0;
  
     mcp23x17_init(exp_driver, MCP23X17_ADDR_1, 1);

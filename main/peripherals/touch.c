@@ -277,14 +277,11 @@ void touch_init(void)
 
 
 
-    
-
-bool touch_read(lv_indev_t *indev_drv, lv_indev_data_t *data) {
+void touch_read(struct _lv_indev_drv_t * indev_drv, lv_indev_data_t *data) {
     (void)indev_drv;
     data->state = f_touch_detected ? LV_INDEV_STATE_PR : LV_INDEV_STATE_REL;
     data->point.x = Touch_Coord[X_COORD];
     data->point.y = Touch_Coord[Y_COORD];
-    return false;
 }
 
 

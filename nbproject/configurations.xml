@@ -140,107 +140,241 @@
         </logicalFolder>
         <logicalFolder name="lvgl" displayName="lvgl" projectFiles="true">
           <logicalFolder name="src" displayName="src" projectFiles="true">
-            <logicalFolder name="lv_core" displayName="lv_core" projectFiles="true">
-              <itemPath>components/lvgl/src/lv_core/lv_debug.c</itemPath>
-              <itemPath>components/lvgl/src/lv_core/lv_disp.c</itemPath>
-              <itemPath>components/lvgl/src/lv_core/lv_group.c</itemPath>
-              <itemPath>components/lvgl/src/lv_core/lv_indev.c</itemPath>
-              <itemPath>components/lvgl/src/lv_core/lv_obj.c</itemPath>
-              <itemPath>components/lvgl/src/lv_core/lv_refr.c</itemPath>
-              <itemPath>components/lvgl/src/lv_core/lv_style.c</itemPath>
+            <logicalFolder name="core" displayName="core" projectFiles="true">
+              <itemPath>components/lvgl/src/core/lv_obj.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_indev.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_obj_tree.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_event.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_group.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_obj_scroll.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_obj_pos.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_obj_style.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_obj_style_gen.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_obj_class.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_disp.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_refr.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_theme.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_indev_scroll.c</itemPath>
+              <itemPath>components/lvgl/src/core/lv_obj_draw.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="lv_draw" displayName="lv_draw" projectFiles="true">
-              <itemPath>components/lvgl/src/lv_draw/lv_draw.c</itemPath>
-              <itemPath>components/lvgl/src/lv_draw/lv_draw_arc.c</itemPath>
-              <itemPath>components/lvgl/src/lv_draw/lv_draw_basic.c</itemPath>
-              <itemPath>components/lvgl/src/lv_draw/lv_draw_img.c</itemPath>
-              <itemPath>components/lvgl/src/lv_draw/lv_draw_label.c</itemPath>
-              <itemPath>components/lvgl/src/lv_draw/lv_draw_line.c</itemPath>
-              <itemPath>components/lvgl/src/lv_draw/lv_draw_rect.c</itemPath>
-              <itemPath>components/lvgl/src/lv_draw/lv_draw_triangle.c</itemPath>
-              <itemPath>components/lvgl/src/lv_draw/lv_img_cache.c</itemPath>
-              <itemPath>components/lvgl/src/lv_draw/lv_img_decoder.c</itemPath>
+            <logicalFolder name="draw" displayName="draw" projectFiles="true">
+              <logicalFolder name="nxp_pxp" displayName="nxp_pxp" projectFiles="true">
+                <itemPath>components/lvgl/src/draw/nxp_pxp/lv_gpu_nxp_pxp.c</itemPath>
+                <itemPath>components/lvgl/src/draw/nxp_pxp/lv_gpu_nxp_pxp_osa.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="nxp_vglite" displayName="nxp_vglite" projectFiles="true">
+                <itemPath>components/lvgl/src/draw/nxp_vglite/lv_gpu_nxp_vglite.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="sdl" displayName="sdl" projectFiles="true">
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_mask.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_rect.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_utils.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_composite.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_line.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_img.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_bg.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_label.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sdl/lv_draw_sdl_arc.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="stm32_dma2d" displayName="stm32_dma2d" projectFiles="true">
+                <itemPath>components/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="sw" displayName="sw" projectFiles="true">
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw_blend.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw_arc.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw_dither.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw_line.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw_gradient.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw_letter.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw_polygon.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw_rect.c</itemPath>
+                <itemPath>components/lvgl/src/draw/sw/lv_draw_sw_img.c</itemPath>
+              </logicalFolder>
+              <itemPath>components/lvgl/src/draw/lv_img_cache.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_draw_line.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_img_decoder.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_draw_rect.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_draw_label.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_img_buf.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_draw_mask.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_draw_arc.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_draw_triangle.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_draw.c</itemPath>
+              <itemPath>components/lvgl/src/draw/lv_draw_img.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="lv_font" displayName="lv_font" projectFiles="true">
-              <itemPath>components/lvgl/src/lv_font/lv_font.c</itemPath>
-              <itemPath>components/lvgl/src/lv_font/lv_font_fmt_txt.c</itemPath>
-              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_12.c</itemPath>
-              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_12_subpx.c</itemPath>
-              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_16.c</itemPath>
-              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_22.c</itemPath>
-              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_28.c</itemPath>
-              <itemPath>components/lvgl/src/lv_font/lv_font_roboto_28_compressed.c</itemPath>
-              <itemPath>components/lvgl/src/lv_font/lv_font_unscii_8.c</itemPath>
+            <logicalFolder name="extra" displayName="extra" projectFiles="true">
+              <logicalFolder name="layouts" displayName="layouts" projectFiles="true">
+                <logicalFolder name="flex" displayName="flex" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/layouts/flex/lv_flex.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="grid" displayName="grid" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/layouts/grid/lv_grid.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+              <logicalFolder name="others" displayName="others" projectFiles="true">
+                <logicalFolder name="gridnav" displayName="gridnav" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/others/gridnav/lv_gridnav.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="monkey" displayName="monkey" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/others/monkey/lv_monkey.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="snapshot" displayName="snapshot" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/others/snapshot/lv_snapshot.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+              <logicalFolder name="themes" displayName="themes" projectFiles="true">
+                <logicalFolder name="basic" displayName="basic" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/themes/basic/lv_theme_basic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="default" displayName="default" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/themes/default/lv_theme_default.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="mono" displayName="mono" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/themes/mono/lv_theme_mono.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+              <logicalFolder name="widgets" displayName="widgets" projectFiles="true">
+                <logicalFolder name="animimg" displayName="animimg" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/animimg/lv_animimg.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="calendar" displayName="calendar" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/calendar/lv_calendar.c</itemPath>
+                  <itemPath>components/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c</itemPath>
+                  <itemPath>components/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="chart" displayName="chart" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/chart/lv_chart.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="colorwheel" displayName="colorwheel" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="imgbtn" displayName="imgbtn" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="keyboard" displayName="keyboard" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/keyboard/lv_keyboard.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="led" displayName="led" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/led/lv_led.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="list" displayName="list" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/list/lv_list.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="menu" displayName="menu" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/menu/lv_menu.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="meter" displayName="meter" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/meter/lv_meter.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="msgbox" displayName="msgbox" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/msgbox/lv_msgbox.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="span" displayName="span" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/span/lv_span.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="spinbox" displayName="spinbox" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/spinbox/lv_spinbox.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="spinner" displayName="spinner" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/spinner/lv_spinner.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="tabview" displayName="tabview" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/tabview/lv_tabview.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="tileview" displayName="tileview" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/tileview/lv_tileview.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="win" displayName="win" projectFiles="true">
+                  <itemPath>components/lvgl/src/extra/widgets/win/lv_win.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+              <itemPath>components/lvgl/src/extra/lv_extra.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="lv_hal" displayName="lv_hal" projectFiles="true">
-              <itemPath>components/lvgl/src/lv_hal/lv_hal_disp.c</itemPath>
-              <itemPath>components/lvgl/src/lv_hal/lv_hal_indev.c</itemPath>
-              <itemPath>components/lvgl/src/lv_hal/lv_hal_tick.c</itemPath>
+            <logicalFolder name="font" displayName="font" projectFiles="true">
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_30.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_26.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_40.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_fmt_txt.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_12.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_8.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_unscii_8.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_14.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_loader.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_12_subpx.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_36.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_18.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_20.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_unscii_16.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_28.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_34.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_38.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_48.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_22.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_24.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_16.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_42.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_32.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_28_compressed.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_44.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_10.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_montserrat_46.c</itemPath>
+              <itemPath>components/lvgl/src/font/lv_font_simsun_16_cjk.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="lv_misc" displayName="lv_misc" projectFiles="true">
-              <itemPath>components/lvgl/src/lv_misc/lv_anim.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_area.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_async.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_bidi.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_circ.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_color.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_fs.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_gc.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_ll.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_log.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_math.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_mem.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_printf.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_task.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_templ.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_txt.c</itemPath>
-              <itemPath>components/lvgl/src/lv_misc/lv_utils.c</itemPath>
+            <logicalFolder name="gpu" displayName="gpu" projectFiles="true">
             </logicalFolder>
-            <logicalFolder name="lv_objx" displayName="lv_objx" projectFiles="true">
-              <itemPath>components/lvgl/src/lv_objx/lv_arc.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_bar.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_btn.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_btnm.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_calendar.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_canvas.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_cb.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_chart.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_cont.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_cpicker.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_ddlist.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_gauge.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_img.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_imgbtn.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_kb.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_label.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_led.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_line.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_list.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_lmeter.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_mbox.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_objx_templ.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_page.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_preload.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_roller.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_slider.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_spinbox.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_sw.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_ta.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_table.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_tabview.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_tileview.c</itemPath>
-              <itemPath>components/lvgl/src/lv_objx/lv_win.c</itemPath>
+            <logicalFolder name="hal" displayName="hal" projectFiles="true">
+              <itemPath>components/lvgl/src/hal/lv_hal_disp.c</itemPath>
+              <itemPath>components/lvgl/src/hal/lv_hal_tick.c</itemPath>
+              <itemPath>components/lvgl/src/hal/lv_hal_indev.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="lv_themes" displayName="lv_themes" projectFiles="true">
-              <itemPath>components/lvgl/src/lv_themes/lv_theme.c</itemPath>
-              <itemPath>components/lvgl/src/lv_themes/lv_theme_alien.c</itemPath>
-              <itemPath>components/lvgl/src/lv_themes/lv_theme_default.c</itemPath>
-              <itemPath>components/lvgl/src/lv_themes/lv_theme_material.c</itemPath>
-              <itemPath>components/lvgl/src/lv_themes/lv_theme_mono.c</itemPath>
-              <itemPath>components/lvgl/src/lv_themes/lv_theme_nemo.c</itemPath>
-              <itemPath>components/lvgl/src/lv_themes/lv_theme_night.c</itemPath>
-              <itemPath>components/lvgl/src/lv_themes/lv_theme_templ.c</itemPath>
-              <itemPath>components/lvgl/src/lv_themes/lv_theme_zen.c</itemPath>
+            <logicalFolder name="misc" displayName="misc" projectFiles="true">
+              <itemPath>components/lvgl/src/misc/lv_style.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_mem.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_math.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_templ.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_fs.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_anim.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_anim_timeline.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_gc.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_ll.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_txt.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_utils.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_lru.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_txt_ap.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_color.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_tlsf.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_timer.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_area.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_async.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_log.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_bidi.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_printf.c</itemPath>
+              <itemPath>components/lvgl/src/misc/lv_style_gen.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="widgets" displayName="widgets" projectFiles="true">
+              <itemPath>components/lvgl/src/widgets/lv_btnmatrix.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_img.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_checkbox.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_arc.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_dropdown.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_label.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_slider.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_bar.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_btn.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_roller.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_objx_templ.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_line.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_textarea.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_switch.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_table.c</itemPath>
+              <itemPath>components/lvgl/src/widgets/lv_canvas.c</itemPath>
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
@@ -358,10 +492,12 @@
         <property key="optimization-level" value="0"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value="LV_CONF_INCLUDE_SIMPLE"/>
+        <property key="preprocessor-macros"
+                  value="LV_CONF_INCLUDE_SIMPLE;uintptr_t=uint16_t;GEL_IGNORE_TIME_TYPECHECK"/>
         <property key="scalar-model" value="default"/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
+        <appendMe value="-std=c99"/>
       </C30>
       <C30-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -411,7 +547,7 @@
         <property key="general-code-protect" value="no_code_protect"/>
         <property key="general-write-protect" value="no_write_protect"/>
         <property key="generate-cross-reference-file" value="false"/>
-        <property key="heap-size" value=""/>
+        <property key="heap-size" value="8192"/>
         <property key="input-libraries" value=""/>
         <property key="linker-stack" value="true"/>
         <property key="linker-symbols" value=""/>
