@@ -5,6 +5,16 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="components" displayName="components" projectFiles="true">
+        <logicalFolder name="cubetto-bsp" displayName="cubetto-bsp" projectFiles="true">
+          <logicalFolder name="peripherals" displayName="peripherals" projectFiles="true">
+            <itemPath>components/cubetto-bsp/peripherals/spi_devices.h</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/touch.h</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/display.h</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/timer.h</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/system.h</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/hardwareprofile.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
         <logicalFolder name="lvgl" displayName="lvgl" projectFiles="true">
           <logicalFolder name="src" displayName="src" projectFiles="true">
             <logicalFolder name="lv_core" displayName="lv_core" projectFiles="true">
@@ -134,6 +144,17 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="components" displayName="components" projectFiles="true">
+        <logicalFolder name="cubetto-bsp" displayName="cubetto-bsp" projectFiles="true">
+          <logicalFolder name="peripherals" displayName="peripherals" projectFiles="true">
+            <itemPath>components/cubetto-bsp/peripherals/timer.c</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/touch.c</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/display.c</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/system.c</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/spi_devices.c</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/digout.c</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/uart_driver.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
         <logicalFolder name="gel" displayName="gel" projectFiles="true">
           <logicalFolder name="timer" displayName="timer" projectFiles="true">
           </logicalFolder>
@@ -393,13 +414,9 @@
       </logicalFolder>
       <logicalFolder name="main" displayName="main" projectFiles="true">
         <logicalFolder name="peripherals" displayName="peripherals" projectFiles="true">
-          <itemPath>main/peripherals/display.c</itemPath>
-          <itemPath>main/peripherals/system.c</itemPath>
-          <itemPath>main/peripherals/timer.c</itemPath>
-          <itemPath>main/peripherals/spi_devices.c</itemPath>
-          <itemPath>main/peripherals/touch.c</itemPath>
         </logicalFolder>
         <itemPath>main/main.c</itemPath>
+        <itemPath>main/img_smile.c</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -472,7 +489,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
-                  value="main/peripherals;components\lvgl;components;main\config;components\generic_embedded_libs;components\SPI"/>
+                  value="main/peripherals;components\lvgl;components;main\config;components\generic_embedded_libs;components\SPI;components\cubetto-bsp"/>
         <property key="isolate-each-function" value="false"/>
         <property key="keep-inline" value="false"/>
         <property key="oXC16gcc-align-arr" value="false"/>
@@ -618,6 +635,7 @@
         <property key="UART 1" value="true"/>
         <property key="UART 2" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="false"/>

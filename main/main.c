@@ -1,11 +1,12 @@
-#include "hardwareprofile.h"
-#include "system.h"
-#include "display.h"
+#include "peripherals/hardwareprofile.h"
+#include "peripherals/system.h"
+#include "peripherals/display.h"
 #include "lvgl.h"
-#include "timer.h"
+#include "peripherals/timer.h"
 #include "gel/timer/timecheck.h"
-#include "spi_devices.h"
+#include "peripherals/spi_devices.h"
 #include "peripherals/touch.h"
+#include "peripherals/digout.h"
 
 
 #define GBUFSIZE (240*128/8)
@@ -71,13 +72,14 @@ int main (void) {
 
     int blink=0;
     system_oscillator_config();
-    system_GPIO_init();
+    system_gpio_init();
     init_display_driver();
     touch_init();
     
     timer_init();
     lv_init();
     spi_devices_init();
+    digout_update_retro(1);
     
     /*A static or global variable to store the buffers*/
     static lv_disp_draw_buf_t disp_buf;
@@ -106,36 +108,6 @@ int main (void) {
     /*Register the driver in LVGL and save the created input device object*/
     lv_indev_t *indev = lv_indev_drv_register(&indev_drv);
    
-#if 0
-    static lv_disp_buf_t disp_buf;
-     
-    lv_disp_buf_init(&disp_buf, gbuf, NULL, 8*240);
-    
-    lv_disp_drv_t disp_drv;
-    
-    lv_disp_drv_init(&disp_drv);            /*Basic initialization*/
-    disp_drv.buffer = &disp_buf;            /*Set an initialized buffer*/
-    disp_drv.flush_cb = my_flush_cb;        /*Set a flush callback to draw to the display*/
-    disp_drv.set_px_cb = lv_vdb_wr_1bpp_horiz;
-    disp_drv.rounder_cb = rounder;
-    lv_disp_t * disp;
-    disp = lv_disp_drv_register(&disp_drv); /*Register the driver and save the created display objects*/ 
-    
-    lv_indev_drv_t indev_drv;
-    lv_indev_drv_init(&indev_drv);      /*Basic initialization*/
-    indev_drv.type = LV_INDEV_TYPE_POINTER;                 /*See below.*/
-    indev_drv.read_cb = touch_read;              /*See below.*/
-    /*Register the driver in LittlevGL and save the created input device object*/
-    lv_indev_t * my_indev = lv_indev_drv_register(&indev_drv);
-    
-        
-    lv_obj_t * scr = lv_disp_get_scr_act(NULL);     /*Get the current screen*/
-    lv_theme_t * th = lv_theme_mono_init(0, NULL);
-    /*Set the surent system theme*/
-    lv_theme_set_current(th);
-#endif
-
-    
 
     lv_obj_t *btn = lv_btn_create(lv_scr_act());
     
@@ -143,17 +115,17 @@ int main (void) {
     /*Create a Label on the currently active screen*/
     lv_obj_t *label1 =  lv_label_create(btn);
     lv_label_set_text(label1, "testo");
+    lv_obj_center(label1);
     lv_obj_set_pos(btn,10, 10);// position, position);
     lv_obj_set_size(btn, 200,60);
     
     while (1) {
-        //flush_one_row();
         lv_task_handler();
         lv_tick_inc(1);
         __delay_ms(1);
         
         if (is_expired(ts,get_millis(), 1000)) {
-            LED_RUN=blink;
+            HAP_RUN=blink;
             blink=!blink;
             ts=get_millis();
         }

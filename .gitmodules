@@ -7,3 +7,6 @@
 [submodule "components/lvgl"]
 	path = components/lvgl
 	url = https://github.com/lvgl/lvgl.git
+[submodule "components/cubetto-bsp"]
+	path = components/cubetto-bsp
+	url = https://github.com/HSW-Bologna/cubetto-bsp.git
