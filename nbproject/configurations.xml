@@ -13,6 +13,24 @@
             <itemPath>components/cubetto-bsp/peripherals/timer.h</itemPath>
             <itemPath>components/cubetto-bsp/peripherals/system.h</itemPath>
             <itemPath>components/cubetto-bsp/peripherals/hardwareprofile.h</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/buzzer.h</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/digout.h</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/digin.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="gel" displayName="gel" projectFiles="true">
+          <logicalFolder name="collections" displayName="collections" projectFiles="true">
+            <itemPath>components/generic_embedded_libs/gel/collections/circular_buffer.h</itemPath>
+            <itemPath>components/generic_embedded_libs/gel/collections/listx.h</itemPath>
+            <itemPath>components/generic_embedded_libs/gel/collections/queue.h</itemPath>
+            <itemPath>components/generic_embedded_libs/gel/collections/stack.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="debounce" displayName="debounce" projectFiles="true">
+            <itemPath>components/generic_embedded_libs/gel/debounce/debounce.h</itemPath>
+            <itemPath>components/generic_embedded_libs/gel/debounce/pulsecounter.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="pagemanager" displayName="pagemanager" projectFiles="true">
+            <itemPath>components/generic_embedded_libs/gel/pagemanager/page_manager.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="lvgl" displayName="lvgl" projectFiles="true">
@@ -125,6 +143,14 @@
       <logicalFolder name="main" displayName="main" projectFiles="true">
         <logicalFolder name="config" displayName="config" projectFiles="true">
           <itemPath>main/config/lv_conf.h</itemPath>
+          <itemPath>main/config/gel_conf.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="controller" displayName="controller" projectFiles="true">
+          <itemPath>main/controller/controller.h</itemPath>
+          <itemPath>main/controller/gui.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="model" displayName="model" projectFiles="true">
+          <itemPath>main/model/model.h</itemPath>
         </logicalFolder>
         <logicalFolder name="peripherals" displayName="peripherals" projectFiles="true">
           <itemPath>main/peripherals/hardwareprofile.h</itemPath>
@@ -133,6 +159,11 @@
           <itemPath>main/peripherals/timer.h</itemPath>
           <itemPath>main/peripherals/spi_devices.h</itemPath>
           <itemPath>main/peripherals/touch.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="view" displayName="view" projectFiles="true">
+          <itemPath>main/view/common.h</itemPath>
+          <itemPath>main/view/view.h</itemPath>
+          <itemPath>main/view/view_types.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -153,9 +184,18 @@
             <itemPath>components/cubetto-bsp/peripherals/spi_devices.c</itemPath>
             <itemPath>components/cubetto-bsp/peripherals/digout.c</itemPath>
             <itemPath>components/cubetto-bsp/peripherals/uart_driver.c</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/buzzer.c</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/digin.c</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="gel" displayName="gel" projectFiles="true">
+          <logicalFolder name="debounce" displayName="debounce" projectFiles="true">
+            <itemPath>components/generic_embedded_libs/gel/debounce/debounce.c</itemPath>
+            <itemPath>components/generic_embedded_libs/gel/debounce/pulsecounter.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="pagemanager" displayName="pagemanager" projectFiles="true">
+            <itemPath>components/generic_embedded_libs/gel/pagemanager/page_manager.c</itemPath>
+          </logicalFolder>
           <logicalFolder name="timer" displayName="timer" projectFiles="true">
           </logicalFolder>
         </logicalFolder>
@@ -413,10 +453,23 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="main" displayName="main" projectFiles="true">
+        <logicalFolder name="controller" displayName="controller" projectFiles="true">
+          <itemPath>main/controller/controller.c</itemPath>
+          <itemPath>main/controller/gui.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="model" displayName="model" projectFiles="true">
+          <itemPath>main/model/model.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="peripherals" displayName="peripherals" projectFiles="true">
         </logicalFolder>
+        <logicalFolder name="view" displayName="view" projectFiles="true">
+          <logicalFolder name="pages" displayName="pages" projectFiles="true">
+            <itemPath>main/view/pages/page_main.c</itemPath>
+          </logicalFolder>
+          <itemPath>main/view/common.c</itemPath>
+          <itemPath>main/view/view.c</itemPath>
+        </logicalFolder>
         <itemPath>main/main.c</itemPath>
-        <itemPath>main/img_smile.c</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -440,7 +493,7 @@
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.36</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="dsPIC33E-GM-GP-MC-GU-MU_DFP" vendor="Microchip" version="1.3.85"/>
@@ -487,9 +540,8 @@
         <property key="enable-short-double" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
-        <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
-                  value="main/peripherals;components\lvgl;components;main\config;components\generic_embedded_libs;components\SPI;components\cubetto-bsp"/>
+                  value="main/peripherals;components\lvgl;components;main\config;components\generic_embedded_libs;components\SPI;components\cubetto-bsp;main"/>
         <property key="isolate-each-function" value="false"/>
         <property key="keep-inline" value="false"/>
         <property key="oXC16gcc-align-arr" value="false"/>
@@ -510,7 +562,7 @@
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros"
-                  value="LV_CONF_INCLUDE_SIMPLE;uintptr_t=uint16_t;GEL_IGNORE_TIME_TYPECHECK"/>
+                  value="LV_CONF_INCLUDE_SIMPLE;uintptr_t=uint16_t;GEL_IGNORE_TIME_TYPECHECK;GEL_SIMPLE_CONFIG_INCLUSION"/>
         <property key="scalar-model" value="default"/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
@@ -540,7 +592,6 @@
       </C30-AS>
       <C30-CO>
         <property key="coverage-enable" value=""/>
-        <property key="stack-guidance" value="false"/>
       </C30-CO>
       <C30-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -667,69 +718,6 @@
         <property key="programoptions.uselvpprogramming" value="false"/>
         <property key="voltagevalue" value="3.25"/>
       </ICD3PlatformTool>
-      <Tool>
-        <property key="ADC 1" value="true"/>
-        <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="COMPARATOR" value="true"/>
-        <property key="CRC" value="true"/>
-        <property key="CTMU" value="true"/>
-        <property key="Freeze All Other Peripherals" value="true"/>
-        <property key="I2C1" value="true"/>
-        <property key="I2C2" value="true"/>
-        <property key="INPUT CAPTURE 1" value="true"/>
-        <property key="INPUT CAPTURE 2" value="true"/>
-        <property key="INPUT CAPTURE 3" value="true"/>
-        <property key="INPUT CAPTURE 4" value="true"/>
-        <property key="OUTPUT COMPARE 1" value="true"/>
-        <property key="OUTPUT COMPARE 2" value="true"/>
-        <property key="OUTPUT COMPARE 3" value="true"/>
-        <property key="OUTPUT COMPARE 4" value="true"/>
-        <property key="PTG" value="true"/>
-        <property key="SPI 1" value="true"/>
-        <property key="SPI 2" value="true"/>
-        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="TIMER1" value="true"/>
-        <property key="TIMER2" value="true"/>
-        <property key="TIMER3" value="true"/>
-        <property key="TIMER4" value="true"/>
-        <property key="TIMER5" value="true"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
-        <property key="UART 1" value="true"/>
-        <property key="UART 2" value="true"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="hwtoolclock.frcindebug" value="false"/>
-        <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="false"/>
-        <property key="memories.configurationmemory" value="true"/>
-        <property key="memories.configurationmemory2" value="true"/>
-        <property key="memories.dataflash" value="true"/>
-        <property key="memories.eeprom" value="true"/>
-        <property key="memories.flashdata" value="true"/>
-        <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
-        <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="0-2afeb"/>
-        <property key="poweroptions.powerenable" value="false"/>
-        <property key="programoptions.donoteraseauxmem" value="false"/>
-        <property key="programoptions.eraseb4program" value="true"/>
-        <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges" value=""/>
-        <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges" value=""/>
-        <property key="programoptions.preserveprogram.ranges" value=""/>
-        <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveuserid" value="false"/>
-        <property key="programoptions.programcalmem" value="false"/>
-        <property key="programoptions.programuserotp" value="false"/>
-        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="programoptions.usehighvoltageonmclr" value="false"/>
-        <property key="programoptions.uselvpprogramming" value="false"/>
-        <property key="voltagevalue" value="3.25"/>
-      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>
