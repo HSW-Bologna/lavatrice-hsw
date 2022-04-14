@@ -16,6 +16,7 @@
             <itemPath>components/cubetto-bsp/peripherals/buzzer.h</itemPath>
             <itemPath>components/cubetto-bsp/peripherals/digout.h</itemPath>
             <itemPath>components/cubetto-bsp/peripherals/digin.h</itemPath>
+            <itemPath>components/cubetto-bsp/peripherals/i2c_devices.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="gel" displayName="gel" projectFiles="true">
@@ -31,6 +32,35 @@
           </logicalFolder>
           <logicalFolder name="pagemanager" displayName="pagemanager" projectFiles="true">
             <itemPath>components/generic_embedded_libs/gel/pagemanager/page_manager.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="I2C" displayName="I2C" projectFiles="true">
+          <logicalFolder name="i2c_common" displayName="i2c_common" projectFiles="true">
+            <itemPath>components/I2C/i2c_common/i2c_common.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="i2c_devices" displayName="i2c_devices" projectFiles="true">
+            <logicalFolder name="eeprom" displayName="eeprom" projectFiles="true">
+              <logicalFolder name="24LC1025" displayName="24LC1025" projectFiles="true">
+                <itemPath>components/I2C/i2c_devices/eeprom/24LC1025/24lc1025.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="rtc" displayName="rtc" projectFiles="true">
+              <logicalFolder name="M41T81" displayName="M41T81" projectFiles="true">
+                <itemPath>components/I2C/i2c_devices/rtc/M41T81/m41t81.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="temperature" displayName="temperature" projectFiles="true">
+              <logicalFolder name="MCP9800" displayName="MCP9800" projectFiles="true">
+                <itemPath>components/I2C/i2c_devices/temperature/MCP9800/MCP9800.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="i2c_ports" displayName="i2c_ports" projectFiles="true">
+            <logicalFolder name="PIC" displayName="PIC" projectFiles="true">
+              <itemPath>components/I2C/i2c_ports/PIC/i2c_bitbang.h</itemPath>
+              <itemPath>components/I2C/i2c_ports/PIC/i2c_driver.h</itemPath>
+              <itemPath>components/I2C/i2c_ports/PIC/i2c_module1.h</itemPath>
+            </logicalFolder>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="lvgl" displayName="lvgl" projectFiles="true">
@@ -139,6 +169,18 @@
           <itemPath>components/lvgl/lvgl.h</itemPath>
           <itemPath>components/lvgl/lv_conf_template.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="SPI" displayName="SPI" projectFiles="true">
+          <logicalFolder name="spi_common" displayName="spi_common" projectFiles="true">
+            <itemPath>components/SPI/spi_common/spi_common.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="spi_devices" displayName="spi_devices" projectFiles="true">
+            <logicalFolder name="io" displayName="io" projectFiles="true">
+              <logicalFolder name="MCP23x17" displayName="MCP23x17" projectFiles="true">
+                <itemPath>components/SPI/spi_devices/io/MCP23x17/mcp23x17.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
       </logicalFolder>
       <logicalFolder name="main" displayName="main" projectFiles="true">
         <logicalFolder name="config" displayName="config" projectFiles="true">
@@ -186,6 +228,7 @@
             <itemPath>components/cubetto-bsp/peripherals/uart_driver.c</itemPath>
             <itemPath>components/cubetto-bsp/peripherals/buzzer.c</itemPath>
             <itemPath>components/cubetto-bsp/peripherals/digin.c</itemPath>
+            <itemPath>components/I2C/i2c_devices.c</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="gel" displayName="gel" projectFiles="true">
@@ -197,6 +240,42 @@
             <itemPath>components/generic_embedded_libs/gel/pagemanager/page_manager.c</itemPath>
           </logicalFolder>
           <logicalFolder name="timer" displayName="timer" projectFiles="true">
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="I2C" displayName="I2C" projectFiles="true">
+          <logicalFolder name="i2c_common" displayName="i2c_common" projectFiles="true">
+            <itemPath>components/I2C/i2c_common/i2c_common.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="i2c_devices" displayName="i2c_devices" projectFiles="true">
+            <logicalFolder name="eeprom" displayName="eeprom" projectFiles="true">
+              <logicalFolder name="24LC1025" displayName="24LC1025" projectFiles="true">
+                <itemPath>components/I2C/i2c_devices/eeprom/24LC1025/24lc1025.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="io" displayName="io" projectFiles="true">
+              <logicalFolder name="MCP23008" displayName="MCP23008" projectFiles="true">
+                <itemPath>components/I2C/i2c_devices/io/MCP23008/mcp23008.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="LTR559ALS" displayName="LTR559ALS" projectFiles="true">
+              <itemPath>components/I2C/i2c_devices/LTR559ALS/ltr559als.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="rtc" displayName="rtc" projectFiles="true">
+              <logicalFolder name="M41T81" displayName="M41T81" projectFiles="true">
+                <itemPath>components/I2C/i2c_devices/rtc/M41T81/m41t81.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="temperature" displayName="temperature" projectFiles="true">
+              <logicalFolder name="MCP9800" displayName="MCP9800" projectFiles="true">
+                <itemPath>components/I2C/i2c_devices/temperature/MCP9800/MCP9800.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="i2c_ports" displayName="i2c_ports" projectFiles="true">
+            <logicalFolder name="PIC" displayName="PIC" projectFiles="true">
+              <itemPath>components/I2C/i2c_ports/PIC/i2c_bitbang.c</itemPath>
+              <itemPath>components/I2C/i2c_ports/PIC/i2c_driver.c</itemPath>
+            </logicalFolder>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="lvgl" displayName="lvgl" projectFiles="true">
@@ -541,7 +620,7 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="extra-include-directories"
-                  value="main/peripherals;components\lvgl;components;main\config;components\generic_embedded_libs;components\SPI;components\cubetto-bsp;main"/>
+                  value="main/peripherals;components\lvgl;components;main\config;components\generic_embedded_libs;components\SPI;components\cubetto-bsp;main;components\I2C;components\cubetto-bsp\peripherals;components\SPI"/>
         <property key="isolate-each-function" value="false"/>
         <property key="keep-inline" value="false"/>
         <property key="oXC16gcc-align-arr" value="false"/>
@@ -686,7 +765,6 @@
         <property key="UART 1" value="true"/>
         <property key="UART 2" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="false"/>

@@ -13,6 +13,10 @@
 #include "controller/gui.h"
 #include "peripherals/digout.h"
 #include "peripherals/digin.h"
+#include "I2C/i2c_devices/eeprom/24LC1025/24lc1025.h"
+#include "I2C/i2c_devices/rtc/M41T81/m41t81.h"
+#include "I2C/i2c_devices/temperature/MCP9800/MCP9800.h"
+#include "peripherals/i2c_devices.h"
 
 static model_t pmodel;
 
@@ -30,19 +34,28 @@ int main (void) {
     model_init(&pmodel);
     controller_init(&pmodel);
     view_init(&pmodel, display_flush_cb, display_rounder, display_set_pixel, touch_read);
+    m41t81_init(rtc_driver);
     
-    unsigned int input = 0;
+    rtc_time_t time;
+    
+    uint8_t buff = 0;
+    
+    ee24lc1025_sequential_write(eeprom_driver, 0, 0x10, "0xAA", 1);
+    ee24lc1025_sequential_read(eeprom_driver, 0, 0x10, &buff, 1);
     
 
     while (1) {
         controller_manage_gui(&pmodel);
         
-        input = digin_get_inputs();
-       
+        MCP9800_set_resolution(temperature_driver, MCP9800_12BIT);
+        double temp = MCP9800_read_temperature(temperature_driver);
+        
         if (is_expired(ts,get_millis(), 1000)) {
             HAP_RUN=blink;
             blink=!blink;
             ts=get_millis();
+                m41t81_get_time(rtc_driver,&time);
+
 
         }
         if (is_expired(read_digints,get_millis(),5)) {
